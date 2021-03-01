@@ -13,7 +13,7 @@ let AddMessage = document.querySelector('.message'),
     addButton.addEventListener('click',function(){
         let newTodo = {
             todo: AddMessage.value,
-            checked: false,
+            checked: true,
             important: false
         };
 
@@ -28,7 +28,7 @@ let AddMessage = document.querySelector('.message'),
         todoList.forEach(function(item,i){
             displayMessage += `
             <li>
-                <input type='checkbox' id='item_${i} ${item.checked ? 'checked' : ''}>
+                <input type='checkbox' id= 'item_${i} ${item.checked ? 'checked' : ''}'>
                 <label for='item_${i}'>${item.todo}</label>
             </li>
             `;
@@ -38,9 +38,9 @@ let AddMessage = document.querySelector('.message'),
 
     todo.addEventListener('change',function(event){
             let idInput = event.target.getAttribute('id');
-            let forLabel = document.getElementById("item");
-            console.log('Label for: '+ forLabel);
-            console.log('valueLabel: ', valueLabel);
+            console.log(idInput);
+            let forLabel = todo.querySelector('[for='+ idInput + ']');
+            console.log('forLabel: '+ forLabel);
 
     });
 
