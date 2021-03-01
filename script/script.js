@@ -38,7 +38,10 @@ let AddMessage = document.querySelector('.message'),
 
     todo.addEventListener('change',function(event){
             let idInput = event.target.getAttribute('id');
-            let forLabel = todo.querySelector('[for='+ idInput + ']');
-            console.log('forLabel',forLabel);
+            let forLabel = document.getElementById("item");
+            console.log('Label for: '+ forLabel);
+            console.log('valueLabel: ', valueLabel);
+
     });
 
+    // "[for=" + idInput + "]"
